@@ -1,0 +1,61 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Prüfziffern EAN</title>
+		
+		<script>
+			"use strict";
+
+			
+			function fFunction(){
+
+			
+				let Zahl1 = document.getElementById("idZahl1").value;
+				let Zahl2 = document.getElementById("idZahl2").value;	
+				let Zahl3 = document.getElementById("idZahl3").value;
+				let Zahl4 = document.getElementById("idZahl4").value;
+				let Zahl5 = document.getElementById("idZahl5").value;
+				let Zahl6 = document.getElementById("idZahl6").value;
+				let Zahl7 = document.getElementById("idZahl7").value;
+				let Zahl8 = document.getElementById("idZahl8").value;
+				let Zahl9 = document.getElementById("idZahl9").value;
+				let Zahl10 = document.getElementById("idZahl10").value;
+				let Zahl11 = document.getElementById("idZahl11").value;
+				let Zahl12 = document.getElementById("idZahl12").value;
+ 
+				let Rechnung = Zahl1*1 + Zahl2*3 +  Zahl3*1 + Zahl4*3 +  Zahl5*1 + Zahl6*3 +  Zahl7*1 + Zahl8*3 +  Zahl9*1 + Zahl10*3 +  Zahl11*1 + Zahl12*3;
+				let vAusgabe = "Die Prüfziffer beträgt: " + IF(Rechnung) + ". Die Prüfsumme beträgt: " + Rechnung + ". Die Artikelnummer lautet: " + Zahl1 + Zahl2 + Zahl3 + Zahl4 + Zahl5 + Zahl6 + Zahl7 + Zahl8 + Zahl9 + Zahl10 + Zahl11+ Zahl12;
+				document.getElementById("idOutput").innerHTML= vAusgabe;
+
+			 
+			}
+			
+			
+			function IF(Rechnung) {
+				
+				if (Rechnung % 10 == 0){return 0}
+				else {return 10 - (Rechnung % 10)}
+			
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Prüfziffer Berchenen</h1>
+		<input id="idZahl1" type="text" maxlength="1" size="1" value ="4">
+		<input id="idZahl2" type="text" maxlength="1" size="1" value ="8">
+		<input id="idZahl3" type="text" maxlength="1" size="1" value ="9">
+		<input id="idZahl4" type="text" maxlength="1" size="1" value ="4">
+		<input id="idZahl5" type="text" maxlength="1" size="1" value ="0">
+		<input id="idZahl6" type="text" maxlength="1" size="1" value ="9">
+		<input id="idZahl7" type="text" maxlength="1" size="1" value ="6">
+		<input id="idZahl8" type="text" maxlength="1" size="1" value ="3">
+		<input id="idZahl9" type="text" maxlength="1" size="1" value ="1">
+		<input id="idZahl10" type="text" maxlength="1" size="1" value ="3">
+		<input id="idZahl11" type="text" maxlength="1" size="1" value ="9">
+		<input id="idZahl12" type="text" maxlength="1" size="1" value ="3">
+		<br><br>
+		<button onclick="fFunction();">Berechne Prüfziffer!</button><br><br>
+		<div id="idOutput"></div>
+	
+</body></html>
